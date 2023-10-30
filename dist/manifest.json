@@ -3,7 +3,9 @@
     "name": "Kirau",
     "version": "1.0",
     "description": "HAHA",
-    "action": {},
+    "action": {
+      "default_popup": "popup.html"
+    },
     "permissions": 
     ["activeTab", "scripting", "tabs", "notifications"],
     "background": { 
