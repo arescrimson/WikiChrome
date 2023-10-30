@@ -3,7 +3,8 @@
     "name": "Color Changer",
     "version": "1.0",
     "description": "Change background color of the current page",
-    "permissions": ["activeTab"],
+    "permissions": 
+    ["activeTab", "scripting"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
@@ -16,5 +17,8 @@
       "16": "icon.jpg",
       "48": "icon.jpg",
       "128": "icon.jpg"
+    }, 
+    "background": { 
+      "service_worker": "background.js"
     }
   }
