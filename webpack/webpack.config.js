@@ -26,4 +26,5 @@ module.exports = {
          patterns: [{from: ".", to: ".", context: "public"}]
       }),
    ],
+   watch: true, 
 };
