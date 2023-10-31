@@ -1,14 +1,29 @@
 {
-    "manifest_version": 3,
-    "name": "Kirau",
-    "version": "1.0",
-    "description": "HAHA",
-    "action": {
-      "default_popup": "popup.html"
-    },
-    "permissions": 
-    ["activeTab", "scripting", "tabs", "notifications"],
-    "background": { 
-      "service_worker": "background.js"
+  "manifest_version": 3,
+  "name": "Kirau",
+  "version": "1.0",
+  "description": "HAHA",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
     }
+  ],
+  "action": {},
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
   }
+}

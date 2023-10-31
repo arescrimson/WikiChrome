@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const e=window.getSelection();if(e){const t=e.toString();t&&fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${t}`).then((e=>e.json())).then((e=>{chrome.runtime.sendMessage({wikipediaData:e})})).catch((e=>{console.error("Error fetching data from Wikipedia API:",e)}))}}()})();
