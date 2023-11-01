@@ -24,7 +24,7 @@ async function getData(selectionText: string) {
         const response = await fetch(searchURL);
         const data = await response.json()
 
-        // chrome.runtime.sendMessage({ wikipediaData: data });
+        chrome.runtime.sendMessage({ wikipediaData: data });
     } catch (error) {
         console.log("Error fetching data from Wikipedia API in contentScript:" + error);
     };
