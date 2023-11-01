@@ -69,6 +69,6 @@ async function getTabIndex() {
  */
 chrome.contextMenus.create({
     id: "1",
-    title: "\"%s\"",
+    title: "WikiChrome Search: \"%s\"",
     contexts: ["selection"],
 })
