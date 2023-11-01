@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Kirau",
+  "name": "WikiChrome",
   "version": "1.0",
-  "description": "HAHA",
+  "description": "Chrome Web Extension for opening Wikipedia pages with highlighted text.",
   "content_scripts": [
     {
       "matches": [
@@ -18,7 +18,8 @@
     "activeTab",
     "scripting",
     "tabs",
-    "notifications"
+    "notifications", 
+    "contextMenus"
   ],
   "host_permissions": [
     "https://*/*"
