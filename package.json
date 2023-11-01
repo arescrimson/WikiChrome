@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "sera",
@@ -17,5 +17,9 @@
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.7",
+    "ts-jest": "^29.1.1"
   }
 }
