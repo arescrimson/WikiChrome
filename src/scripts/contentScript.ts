@@ -5,8 +5,8 @@ getData()
 /**
  * Gets Data from currently highlighted text in window. Sends wikipedia json to background. 
  */
-function getData() {
-    const selection= window.getSelection();
+async function getData() {
+    const selection = window.getSelection();
 
     if (selection) {
         const selectionText: string = selection.toString();
@@ -14,14 +14,14 @@ function getData() {
         if (selectionText) {
             const searchURL: string = `https://en.wikipedia.org/api/rest_v1/page/summary/${selectionText}`;
 
-            fetch(searchURL)
-                .then(response => response.json())
-                .then(data => {
-                    chrome.runtime.sendMessage({ wikipediaData: data });
-                })
-                .catch(error => {
-                    console.error("Error fetching data from Wikipedia API in contentScript:", error);
-                });
+            try {
+                const response = await fetch(searchURL);
+                const data = await response.json()
+
+                chrome.runtime.sendMessage({ wikipediaData: data });
+            } catch (error) {
+                console.log("Error fetching data from Wikipedia API in contentScript:" + error);
+            };
         }
     }
 }
