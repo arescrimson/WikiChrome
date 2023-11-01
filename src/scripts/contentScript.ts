@@ -2,14 +2,17 @@
 
 getData()
 
+/**
+ * Gets Data from currently highlighted text in window. Sends wikipedia json to background. 
+ */
 function getData() {
-    const selection = window.getSelection();
+    const selection= window.getSelection();
 
     if (selection) {
         const selectionText: string = selection.toString();
 
         if (selectionText) {
-            const searchURL = `https://en.wikipedia.org/api/rest_v1/page/summary/${selectionText}`;
+            const searchURL: string = `https://en.wikipedia.org/api/rest_v1/page/summary/${selectionText}`;
 
             fetch(searchURL)
                 .then(response => response.json())
@@ -22,4 +25,3 @@ function getData() {
         }
     }
 }
- 
