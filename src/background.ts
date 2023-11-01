@@ -17,16 +17,7 @@ chrome.action.onClicked.addListener((tab: chrome.tabs.Tab) => {
  */
 chrome.runtime.onMessage.addListener(function (request: any, sender: chrome.runtime.MessageSender, sendResponse: any) {
     if (request.wikipediaData) {
-        //const wikipediaData: string = request.wikipediaData.content_urls?.desktop?.page ?? null;
-        getWikiData(request.wikipediaData)
-        /*
-        if (wikipediaData) {
-            chrome.tabs.create({ url: wikipediaData, active: false })
-                .catch(error => {
-                    console.error("Error fetching data from Wikipedia API in Background:", error);
-                });
-        } 
-        */
+        createTab(request.wikipediaData)
     }
 });
 
@@ -41,7 +32,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     fetch(wikipediaURL)
         .then(response => response.json())
         .then(data => {
-            getWikiData(data)
+            createTab(data)
         })
         .catch(error => {
             console.error("Error fetching data from Wikipedia API in contentScript:", error);
@@ -53,7 +44,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
  * 
  * @param data is the passed data value(json of wikipedia page)
  */
-function getWikiData(data: any) {
+function createTab(data: any) {
     const wikipediaLink: any = data.content_urls?.desktop?.page ?? null
 
     if (wikipediaLink) {
