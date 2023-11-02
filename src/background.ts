@@ -4,12 +4,14 @@
  * Registers click or keyboard shortcut to execute contentScript to get highlighted text from window. 
  */
 chrome.action.onClicked.addListener((tab: chrome.tabs.Tab) => {
+    /** 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
         chrome.scripting.executeScript({
             target: { tabId: tabs[0].id ? tabs[0].id : -1 },
             files: ["contentScript.js"],
         });
     });
+    */
 });
 
 /**
@@ -57,12 +59,26 @@ function createTab(data: any, newIndex: number) {
     }
 }
 
+/**
+ * Gets Tab Index based on current window. Returns current tab index + 1 so new tab opens on right. 
+ * 
+ * @returns number tab index. 
+ */
 async function getTabIndex() {
     let queryOptions = { active: true, lastFocusedWindow: true };
     let [tab] = await chrome.tabs.query(queryOptions);
 
     return tab.index + 1;
 }
+
+chrome.commands.onCommand.addListener(function(command, tab,) { 
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
+        chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id ? tabs[0].id : -1 },
+            files: ["contentScript.js"],
+        });
+    });
+})
 
 /**
  * Creates context menu for right click menu popup. 
