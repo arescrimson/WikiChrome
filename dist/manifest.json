@@ -14,14 +14,20 @@
     }
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "media/wiki.png",
+      "48": "media/wiki.png",
+      "128": "media/wiki.png"
+  }
   },
   "permissions": [
     "activeTab",
     "scripting",
     "tabs",
     "notifications", 
-    "contextMenus"
+    "contextMenus", 
+    "storage"
   ],
   "host_permissions": [
     "https://*/*"

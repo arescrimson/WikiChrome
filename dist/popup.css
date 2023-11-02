@@ -1,0 +1,38 @@
+.popup-content {
+    background-color: mediumpurple;
+    font-family: 'Georgia', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background-color: green;
+    font-family: 'Georgia', sans-serif;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+button.active {
+    background-color: green; /* Change the background color for the active state */
+    color: white;
+}
+
+button.active:hover {
+    background-color: darkgreen; /* Change the background color on hover for the active state */
+}
+
+/* Additional CSS for the inactive state if needed */
+button.inactive {
+    background-color: red; /* Change the background color for the inactive state */
+    color: white;
+}
+
+button.inactive:hover {
+    background-color: darkred; /* Change the background color on hover for the inactive state */
+}
