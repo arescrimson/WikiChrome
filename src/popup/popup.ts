@@ -1,10 +1,5 @@
+document.getElementById('setActiveButton')?.click()
 const button = document.getElementById('setActiveButton');
-
-// Load the initial state from storage
-chrome.storage.sync.get('isActive', (result) => {
-    const isActive: boolean = result.isActive || false;
-    updateButtonState(isActive);
-});
 
 // Adds event listener and sets activeState to opposite of current state. 
 if (button) {
