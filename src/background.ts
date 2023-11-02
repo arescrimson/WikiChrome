@@ -71,6 +71,9 @@ async function getTabIndex() {
     return tab.index + 1;
 }
 
+/**
+ * 
+ */
 chrome.commands.onCommand.addListener(function(command, tab,) { 
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
         chrome.scripting.executeScript({
