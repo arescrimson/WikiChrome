@@ -6,6 +6,10 @@ Chrome Web Extension built in TypeScript using Chrome API. Simple way to open hi
 
 Currently under review for publishing in Chrome Web Store! :D 
 
+### Built With
+
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)  [![ts-jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)](https://github.com/kulshekhar/ts-jest) [![Chrome API](https://img.shields.io/badge/Google_chrome-4285F4?style=for-the-badge&logo=Google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/reference/) 
+ 
 ## Usage 
 
 1. At chrome://extensions, navigate to keyboard shortcuts.![Screenshot 2023-11-02 120007](https://github.com/arescrimson/WikiChrome/assets/66581240/79a51ef6-11d3-498a-92df-d7a9977c84cc)<br>
