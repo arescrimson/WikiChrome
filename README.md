@@ -13,8 +13,12 @@ Currently under review for publishing in Chrome Web Store! :D
 
 2. Configure the shortcut to your preferred keybind.
     ![Screenshot 2023-11-01 235507](https://github.com/arescrimson/WikiChrome/assets/66581240/3a4899a1-a6b7-454d-8147-c17cf6238d0a) <br> NOTE: Configure for "WikiChrome Shortcut", NOT "Activate Extension".
+   
+3. Configure the chrome extension popup to set/unset your active tab as the newly opened tab. <br>
+   ![Screenshot 2023-11-02 115136](https://github.com/arescrimson/WikiChrome/assets/66581240/735787f6-1505-481b-9a2c-bff621178375)
 
-3. You can now search highlighted text by using your keybind on highlighted text. <br>
+
+4. You can now search highlighted text by using your keybind on highlighted text. <br>
    ![Screenshot 2023-11-02 000043](https://github.com/arescrimson/WikiChrome/assets/66581240/177b6255-64a7-4d42-872a-219f9429b96f)
 
    NOTE: Unreachable results will result in no action. 
