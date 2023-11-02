@@ -13,7 +13,9 @@
       ]
     }
   ],
-  "action": {},
+  "action": {
+    "default_popup": "popup.html"
+  },
   "permissions": [
     "activeTab",
     "scripting",
@@ -29,7 +31,11 @@
   }, 
   "commands": {
     "testingcommand": {
-      "suggested_key": "Ctrl+Y",
+      "suggested_key": { 
+        "default": "Ctrl+Q",
+        "chromeos": "Ctrl+Q", 
+        "windows": "Ctrl+Q" 
+      },
       "description": "Description of your command", 
       "global": true
     }
