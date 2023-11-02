@@ -23,12 +23,19 @@ function getSelection() {
  * 
  * @param selectionText is the currently selected Text in window. 
  */
-async function getData(selectionText: string) {
+async function getData(selectedText: string) {
 
-    if (!selectionText) return;
+    if (!selectedText) return;
 
-    const searchURL: string = `https://en.wikipedia.org/api/rest_v1/page/summary/${selectionText}`;
+    let selectedTextArr = selectedText.split(" ");
 
+    //Capitalizes every first letter of word because of Wikipedia API search parameters. 
+    for (let i = 0; i < selectedTextArr.length; i++) { 
+        selectedTextArr[i] = selectedTextArr[i].charAt(0).toUpperCase() + selectedTextArr[i].slice(1)
+    }
+
+    const searchURL: string = `https://en.wikipedia.org/api/rest_v1/page/summary/${(selectedTextArr?.join('_'))}`
+    
     try {
         const response = await fetch(searchURL);
         const data = await response.json()
