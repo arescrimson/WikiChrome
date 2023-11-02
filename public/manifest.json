@@ -41,7 +41,7 @@
         "chromeos": "Ctrl+Q", 
         "windows": "Ctrl+Q" 
       },
-      "description": "Description of your command", 
+      "description": "WikiChrome Shortcut", 
       "global": true
     }
   }
