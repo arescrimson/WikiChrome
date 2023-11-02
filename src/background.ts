@@ -1,14 +1,6 @@
 // background.js
 
 /**
- * Registers click or keyboard shortcut
- */
-/*
-chrome.action.onClicked.addListener((tab: chrome.tabs.Tab) => {
-    
-});
-
-/**
  * Responds to contentScript's highlighted text and creates new tab corresponding to highlighted text. 
  */
 chrome.runtime.onMessage.addListener(async function (request: any, sender: chrome.runtime.MessageSender, sendResponse: any) {
@@ -19,21 +11,52 @@ chrome.runtime.onMessage.addListener(async function (request: any, sender: chrom
 
 /**
  * Opens highlighted text wikipedia link from right click menu. 
- * TODO: CHANGE TO ACCOUNT FOR UNREACHABLE LINKS INSTEAD OF OPENING NEW GOOGLE TAB
  */
 chrome.contextMenus.onClicked.addListener(async function (info, tab) {
-    const selectedText = info.selectionText;
-    const wikipediaURL: string = `https://en.wikipedia.org/api/rest_v1/page/summary/${selectedText}`;
+    const selectedText: string | undefined = info.selectionText;
 
-    try {
-        const response = await fetch(wikipediaURL);
-        const data = await response.json();
-        const tabIndex = await getTabIndex();
-        createTab(data, tabIndex);
-    } catch (error) {
-        console.error("Error fetching data from Wikipedia API in contentScript:", error);
-    };
+    if (selectedText) {
+        let selectedTextArr = selectedText.split(" ");
+
+        //Capitalizes every first letter of word because of Wikipedia API search parameters. 
+        for (let i = 0; i < selectedTextArr.length; i++) {
+            selectedTextArr[i] = selectedTextArr[i].charAt(0).toUpperCase() + selectedTextArr[i].slice(1)
+        }
+
+        const searchURL: string = `https://en.wikipedia.org/api/rest_v1/page/summary/${(selectedTextArr?.join('_'))}`
+
+        try {
+            const response = await fetch(searchURL);
+            const data = await response.json();
+            const tabIndex = await getTabIndex();
+
+            createTab(data, tabIndex);
+        } catch (error) {
+            console.error("Error fetching data from Wikipedia API in contentScript:", error);
+        };
+    }
 });
+
+/**
+ * Registers keyboard shortcut. 
+ */
+chrome.commands.onCommand.addListener(function (command, tab,) {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
+        chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id ? tabs[0].id : -1 },
+            files: ["contentScript.js"],
+        });
+    });
+})
+
+/**
+ * Creates context menu for right click menu popup. 
+ */
+chrome.contextMenus.create({
+    id: "1",
+    title: "WikiChrome Search: \"%s\"",
+    contexts: ["selection"],
+})
 
 /**
  * Creates chrome tab based on parsing passed data value. 
@@ -48,9 +71,9 @@ function createTab(data: any, newIndex: number) {
             const newActiveState = result.isActive;
 
             chrome.tabs.create({ url: wikipediaLink, index: newIndex, active: newActiveState, })
-            .catch(error => {
-                console.error("Error fetching data from Wikipedia API in Background:", error);
-            });
+                .catch(error => {
+                    console.error("Error fetching data from Wikipedia API in Background:", error);
+                });
         });
     } else {
         console.log("No suitable link created.")
@@ -69,23 +92,3 @@ async function getTabIndex() {
     return tab.index + 1;
 }
 
-/**
- * Registers keyboard shortcut. 
- */
-chrome.commands.onCommand.addListener(function(command, tab,) { 
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
-        chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id ? tabs[0].id : -1 },
-            files: ["contentScript.js"],
-        });
-    });
-})
-
-/**
- * Creates context menu for right click menu popup. 
- */
-chrome.contextMenus.create({
-    id: "1",
-    title: "WikiChrome Search: \"%s\"",
-    contexts: ["selection"],
-})
