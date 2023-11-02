@@ -52,11 +52,14 @@ chrome.commands.onCommand.addListener(function (command, tab,) {
 /**
  * Creates context menu for right click menu popup. 
  */
-chrome.contextMenus.create({
-    id: "1",
-    title: "WikiChrome Search: \"%s\"",
-    contexts: ["selection"],
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.contextMenus.create({
+        id: "WikiChromeMenu",
+        title: "WikiChrome Search: \"%s\"",
+        contexts: ["selection"],
+    })
 })
+
 
 /**
  * Creates chrome tab based on parsing passed data value. 
