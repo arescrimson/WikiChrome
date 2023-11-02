@@ -27,7 +27,7 @@ async function getData(selectedText: string) {
 
     if (!selectedText) return;
 
-    let selectedTextArr = selectedText.split(" ");
+    let selectedTextArr: Array<string> = selectedText.split(" ");
 
     //Capitalizes every first letter of word because of Wikipedia API search parameters. 
     for (let i = 0; i < selectedTextArr.length; i++) { 
