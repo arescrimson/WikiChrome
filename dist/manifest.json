@@ -3,6 +3,11 @@
   "name": "WikiChrome",
   "version": "1.0",
   "description": "Chrome Web Extension for opening Wikipedia pages with highlighted text.",
+  "icons": {
+    "16": "media/wiki.png",
+    "48": "media/wiki.png",
+    "128": "media/wiki.png"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -19,13 +24,13 @@
       "16": "media/wiki.png",
       "48": "media/wiki.png",
       "128": "media/wiki.png"
-  }
+    }
   },
   "permissions": [
     "activeTab",
     "scripting",
     "tabs",
-    "contextMenus", 
+    "contextMenus",
     "storage"
   ],
   "host_permissions": [
@@ -33,15 +38,15 @@
   ],
   "background": {
     "service_worker": "background.js"
-  }, 
+  },
   "commands": {
     "testingcommand": {
-      "suggested_key": { 
+      "suggested_key": {
         "default": "Ctrl+Q",
-        "chromeos": "Ctrl+Q", 
-        "windows": "Ctrl+Q" 
+        "chromeos": "Ctrl+Q",
+        "windows": "Ctrl+Q"
       },
-      "description": "WikiChrome Shortcut", 
+      "description": "WikiChrome Shortcut",
       "global": true
     }
   }
