@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@types/jest": "^29.5.7",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
     "ts-jest": "^29.1.1"
   }
 }
