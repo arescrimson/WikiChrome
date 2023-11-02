@@ -2,7 +2,7 @@
 
 ## About
 
-Chrome Web Extension built in TypeScript using Chrome API. Simple way to open highlighted text as a wikipedia article from either a right click menu, or a configurable keyboard shortcut. 
+Chrome Web Extension built in TypeScript using Chrome API. Simple way to open highlighted text as a Wikipedia article from right click menu or configurable keyboard shortcut. 
 
 Currently under review for publishing in Chrome Web Store! :D 
 
