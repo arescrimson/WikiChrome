@@ -16,7 +16,6 @@ test("getData - Tests Fetch - True", async () => {
 
   await getData(testingValue);
 
-  // Expectations
   expect(global.fetch).toHaveBeenCalledWith(
     `https://en.wikipedia.org/api/rest_v1/page/summary/${testingValue}`
   );
