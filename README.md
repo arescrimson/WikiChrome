@@ -6,11 +6,11 @@ Chrome Web Extension built in TypeScript using Chrome API. Simple way to open hi
 
 ## Usage 
 
-1. At chrome://extensions, navigate to keyboard shortcuts. 
+1. At chrome://extensions, navigate to keyboard shortcuts. ![Screenshot 2023-11-01 235217](https://github.com/arescrimson/WikiChrome/assets/66581240/744c05f2-da82-4623-94e9-4cb6823cc3d9)
 
-2. Configure the shortcut to your preferred keybind. NOTE: Configure for "WikiChrome Shortcut", NOT "Activate Extension". 
+2. Configure the shortcut to your preferred keybind. NOTE: Configure for "WikiChrome Shortcut", NOT "Activate Extension". ![Screenshot 2023-11-01 235507](https://github.com/arescrimson/WikiChrome/assets/66581240/3a4899a1-a6b7-454d-8147-c17cf6238d0a)
 
-3. You can now search highlighted text by using your keybind on highlighted text. NOTE: Unreachable results will result in no action. 
+3. You can now search highlighted text by using your keybind on highlighted text. NOTE: Unreachable results will result in no action. ![Screenshot 2023-11-02 000043](https://github.com/arescrimson/WikiChrome/assets/66581240/177b6255-64a7-4d42-872a-219f9429b96f)
 
 ## MIT License 
 
