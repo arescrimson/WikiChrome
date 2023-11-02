@@ -1,7 +1,8 @@
 {
   "name": "wikichrome",
   "version": "1.0.0",
-  "description": "",
+  "description": 
+  "Chrome Web Extension built in TypeScript using Chrome API. Simple way to open highlighted text as a wikipedia article from either a right click menu, or a configurable keyboard shortcut. ",
   "main": "",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.js",
