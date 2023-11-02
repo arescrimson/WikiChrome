@@ -11,18 +11,10 @@ chrome.action.onClicked.addListener((tab: chrome.tabs.Tab) => {
 /**
  * Responds to contentScript's highlighted text and creates new tab corresponding to highlighted text. 
  */
-let activeTab = true; 
 chrome.runtime.onMessage.addListener(async function (request: any, sender: chrome.runtime.MessageSender, sendResponse: any) {
     if (request.wikipediaData) {
         createTab(request.wikipediaData, await getTabIndex())
     }
-
-    if (request.setActiveTab) { 
-        activeTab = true 
-    } else if (!request.setActiveTab) { 
-        activeTab = false 
-    }
-
 });
 
 /**
