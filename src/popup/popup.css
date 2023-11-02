@@ -18,21 +18,22 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Active Button Styling */
 button.active {
-    background-color: green; /* Change the background color for the active state */
+    background-color: green; 
     color: white;
 }
 
 button.active:hover {
-    background-color: darkgreen; /* Change the background color on hover for the active state */
+    background-color: darkgreen; 
 }
 
-/* Additional CSS for the inactive state if needed */
+/* Inactive Button Styling */
 button.inactive {
-    background-color: red; /* Change the background color for the inactive state */
+    background-color: red;
     color: white;
 }
 
 button.inactive:hover {
-    background-color: darkred; /* Change the background color on hover for the inactive state */
+    background-color: darkred; 
 }
