@@ -8,8 +8,7 @@ Currently under review for publishing in Chrome Web Store! :D
 
 ## Usage 
 
-1. At chrome://extensions, navigate to keyboard shortcuts.
-   ![Screenshot 2023-11-01 235217](https://github.com/arescrimson/WikiChrome/assets/66581240/744c05f2-da82-4623-94e9-4cb6823cc3d9) <br>
+1. At chrome://extensions, navigate to keyboard shortcuts.![Screenshot 2023-11-02 120007](https://github.com/arescrimson/WikiChrome/assets/66581240/79a51ef6-11d3-498a-92df-d7a9977c84cc)<br>
 
 2. Configure the shortcut to your preferred keybind.
     ![Screenshot 2023-11-01 235507](https://github.com/arescrimson/WikiChrome/assets/66581240/3a4899a1-a6b7-454d-8147-c17cf6238d0a) <br> NOTE: Configure for "WikiChrome Shortcut", NOT "Activate Extension".
