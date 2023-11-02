@@ -11,7 +11,10 @@ getSelection()
 function getSelection() {
     const selection: any = window.getSelection()
 
-    if (selection) getData(selection.toString())
+    if (selection) {
+        getData(selection.toString())
+        return
+    }
 }
 
 async function getData(selectionText: string) {
