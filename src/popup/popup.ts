@@ -6,6 +6,7 @@ chrome.storage.sync.get('isActive', (result) => {
     updateButtonState(isActive);
 });
 
+// Adds event listener and sets activeState to opposite of current state. 
 if (button) {
     button.addEventListener('click', () => {
         chrome.storage.sync.get('isActive', (result) => {
@@ -13,11 +14,15 @@ if (button) {
             const newActiveState = !isActive;
             updateButtonState(newActiveState);
             chrome.storage.sync.set({ isActive: newActiveState });
-            chrome.runtime.sendMessage({ setActiveTab: newActiveState });
         });
     });
 }
 
+/**
+ * Toggles button styling depending on isActive.
+ * 
+ * @param isActive is boolean passed 
+ */
 function updateButtonState(isActive: boolean) {
     if (button) {
         button.classList.toggle('active', isActive);
