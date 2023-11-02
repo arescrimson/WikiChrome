@@ -4,6 +4,8 @@
 
 Chrome Web Extension built in TypeScript using Chrome API. Simple way to open highlighted text as a wikipedia article from either a right click menu, or a configurable keyboard shortcut. 
 
+Currently under review for publishing in Chrome Web Store! :D 
+
 ## Usage 
 
 1. At chrome://extensions, navigate to keyboard shortcuts.
