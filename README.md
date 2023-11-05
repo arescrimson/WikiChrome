@@ -26,7 +26,25 @@ Currently under review for publishing in Chrome Web Store! :D
 4. You can now search highlighted text by using your keybind on highlighted text. <br>
    ![Screenshot 2023-11-02 000043](https://github.com/arescrimson/WikiChrome/assets/66581240/177b6255-64a7-4d42-872a-219f9429b96f)
 
-   NOTE: Unreachable results will result in no action. 
+   NOTE: Unreachable results will result in no action.
+
+## Installation 
+
+For just an installation of the extension itself(if you want the file version instead of the Chrome Web Store download), 
+
+1. download/clone the project, and locate the dist folder.
+2. go to [Chrome Extensions](chrome://extensions), and select load unpacked.
+3. Then, select the dist folder as the unpacked folder.
+4. Active Chrome Web Extension 
+
+## Development 
+
+1. download/clone the project.
+2. run `cd WikiChrome`
+4. run `npm install`
+5. run `npm run build`
+6. go to [Chrome Extensions](chrome://extensions), and select load unpacked.
+7. Then, select the dist folder as the unpacked folder.  
 
 ## MIT License 
 
