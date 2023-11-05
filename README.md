@@ -2,6 +2,8 @@
 
 ## About
 
+Context: I've always liked reading about random things I find or find interesting on the internet in Wikipedia, but up until now, I'd have to search everything I found in google manually, and then go to Wikipedia. That got me thinking about a more efficient way(because I'm lazy but I do happen to be a programmer) to be able to open Wikipedia pages straight from the browser page. This would eventually become the idea for this project. 
+
 Chrome Web Extension built in TypeScript using Chrome API. Simple way to open highlighted text as a Wikipedia article from right click menu or configurable keyboard shortcut. 
 
 Currently under review for publishing in Chrome Web Store! :D 
