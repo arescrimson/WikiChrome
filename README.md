@@ -44,7 +44,8 @@ For just an installation of the extension itself(if you want the file version in
 4. run `npm install`
 5. run `npm run build`
 6. go to [Chrome Extensions](chrome://extensions), and select load unpacked.
-7. Then, select the dist folder as the unpacked folder.  
+7. Then, select the dist folder as the unpacked folder.
+8. Active Chrome Web Extension 
 
 ## MIT License 
 
