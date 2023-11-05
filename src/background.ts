@@ -41,6 +41,8 @@ chrome.contextMenus.onClicked.addListener(async function (info, tab) {
  * Registers keyboard shortcut. 
  */
 chrome.commands.onCommand.addListener(function (command, tab,) {
+    if (tab.url?.startsWith("chrome://")) return; 
+    
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs: chrome.tabs.Tab[]) {
         chrome.scripting.executeScript({
             target: { tabId: tabs[0].id ? tabs[0].id : -1 },
